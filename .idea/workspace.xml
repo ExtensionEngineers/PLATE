@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49fda6bc-ec68-4fda-9f23-33707974b4f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/translate.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logo.ico" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
     </list>
     <ignored path="PLATE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -612,12 +608,19 @@
       <workItem from="1451765294892" duration="214000" />
       <workItem from="1451765574047" duration="158000" />
       <workItem from="1451765743576" duration="772000" />
-      <workItem from="1451769616916" duration="1980000" />
+      <workItem from="1451769616916" duration="2000000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit&#10;">
+      <created>1451771609635</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1451771609635</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3124000" />
+    <option name="totallyTimeSpent" value="3144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="49" width="2182" height="1402" extended-state="6" />
