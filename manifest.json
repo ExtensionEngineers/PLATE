@@ -5,11 +5,11 @@
   "short_name"      : "PLATE",
   "version"         : "0.1",
   "browser_action": {
-    "default_popup": "index.html",
-    "default_icon" : "images/logo.png"
+    "default_popup": "index.html"
   },
   "permissions": [
     "debugger",
     "storage"
-  ]
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

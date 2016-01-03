@@ -1,39 +1,33 @@
-<!DOCTYPE html>
-<html ng-app='app'>
+<!doctype html>
+<html>
 <head>
-    <title>P.L.A.T.E.</title>
-    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
 </head>
-<body ng-controller='settingsController'>
-    <div class='container'>
-        <h4>PLATE settings</h4>
+<body ng-app="myApp">
+    <div class="main" ng-controller="MainController">
         <div>
-            <select name="Language">
-                <option value="english">English</option>
-                <option value="french">French</option>
-                <option value="spanish">Spanish</option>
-            </select>
-        </div>
-        <div class="checkbox">
-            <label><input type="checkbox" value="">Disable</label>
-        </div>
-        <div>
-            <h4>testing</h4>
+            <h1>{{ chromeName }}</h1>
+            <!--array stuff
+            <div ng-repeat="product in products" class="col-md-6">
+                <div class="thumbnail">
+                    <img ng-src="{{ product.cover }}">
+                    <p class="title">{{ product.name }}</p>
+                    <p class="price">{{ product.price | currency }}</p>
+                    <div class="rating">
+                        <p class="likes" ng-click="plusOne($index)">{{product.likes}}</p>
+                        <p class="dislikes" ng-click="minusOne($index)"> {{ product.dislikes }}</p>
+                    </div>
+                        <p class="date">{{ product.pubdate | date }}</p>
+                    </div>
+                </div>
+            -->
         </div>
     </div>
-    <!-- Imports -->
-    <!-- im breaking stuffdsf -->
-    <!-- breaking more stuffasdfs -->
-    <!-- breaking more stuff v2 -->
-    <script type="text/javascript" src="lib/jquery/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="lib/angular/angular.js"></script>
-    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
-    <script type="text/javascript" src="app/settingsController.js"></script>
-    <script type="text/javascript" src="app/todoStorage.js"></script>
-    <!-- Translator -->
-    <script src="app/translate.js"></script>
-    <script src="http://www.example.com/text/en.js" ></script>
+
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
 </body>
 </html>
