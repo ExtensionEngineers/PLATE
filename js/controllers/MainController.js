@@ -1,3 +1,3 @@
-app.controller('MainController', ['$scope', function($scope) {
-        $scope.chromeName = "P.L.A.T.E.";
+angular.module('app').controller('MainController', ['$scope', function($scope) {
+        $scope.message = "P.L.A.T.E.";
 }]);
