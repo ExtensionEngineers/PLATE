@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name"            : "ng-Todo",
-  "description"     : "Minimal todo app for minimalist",
-  "short_name"      : "ng-Todo",
+  "name"            : "P.L.A.T.E.",
+  "description"     : "Passive Learning Angular Translation Extension",
+  "short_name"      : "PLATE",
   "version"         : "0.1",
   "browser_action": {
     "default_popup": "index.html",
