@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name"            : "PLATE",
-  "description"     : "PLATE",
+  "name"            : "P.L.A.T.E.",
+  "description"     : "Passive Learning Angular Translation Extension",
   "short_name"      : "PLATE",
   "version"         : "0.1",
   "browser_action": {
