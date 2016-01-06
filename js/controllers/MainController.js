@@ -2,6 +2,7 @@
 
 angular.module('app').controller('MainController', function ($scope) {
         $scope.languages = ['English', 'French', 'Spanish'];
+        $scope.language = "en";
         $scope.enabled = false;
         $scope.buttonText = 'Turn On';
         $scope.toggle = function() {
