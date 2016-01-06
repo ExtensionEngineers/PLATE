@@ -8,9 +8,9 @@
 <div class='container'>
     <div>
         <select name="Language">
-            <option value="English">English</option>
-            <option value="French">French</option>
-            <option value="Spanish">Spanish</option>
+            <option value="English">en</option>
+            <option value="French">fr</option>
+            <option value="Spanish">es</option>
         </select>
     </div>
     <div>
@@ -18,7 +18,7 @@
     </div>
 
 
-<div id="sourceText">Hello world</div>
+<div id="sourceText">How are you?</div>
     <div id="translation"></div>
     <script>
       function translateText(response) {
@@ -30,7 +30,7 @@
       var newScript = document.createElement('script');
       newScript.type = 'text/javascript';
       var sourceText = escape(document.getElementById("sourceText").innerHTML);
-      var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&source=en&target=de&callback=translateText&q=' + sourceText;
+      var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&source=en&target=es&callback=translateText&q=' + sourceText;
       newScript.src = source;
 
       // When we add this script to the head, the request is sent off.
