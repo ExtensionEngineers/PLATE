@@ -62,7 +62,7 @@
             dropdownHTML += '<option value="';
             dropdownHTML += response.data.languages[i].language;
             dropdownHTML += '">';
-            dropdownHTML += response.data.languages[i].language;
+            dropdownHTML += response.data.languages[i].name;
             dropdownHTML += '</option>';
         };
         $('#language').html(dropdownHTML);
@@ -70,7 +70,7 @@
 </script>
 
 <script>
-    var source = 'https://www.googleapis.com/language/translate/v2/languages?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM';
+    var source = "https://www.googleapis.com/language/translate/v2/languages?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&target=en";
     $.getJSON(source, injectLanguages);
 </script>
 
