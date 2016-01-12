@@ -8,7 +8,17 @@
     "default_popup": "index.html",
     "default_icon" : "images/logo.png"
   },
+  "background":
+  {
+    "scripts": [
+      "lib/jquery/jquery-2.1.3.min.js",
+      "js/GetMethods/getTranslation.js",
+      "js/GetMethods/getLanguages.js"
+    ]
+  },
   "permissions": [
+    "tabs",
+    "activeTab",
     "debugger",
     "storage"
   ],

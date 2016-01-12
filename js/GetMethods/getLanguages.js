@@ -1,10 +1,12 @@
 //Callback function
 function injectLanguages(response){
     var dropdownHTML = "";
-    //<option value="fr">French</option>
+    //<option value="fr">
+    //  French
+    //</option>
     $.each(response.data.languages, function(i, item){
         dropdownHTML += '<option value="' + item.language + '">';
-        dropdownHTML += item.name;
+        dropdownHTML +=     item.name;
         dropdownHTML += '</option>';
     });
     $('#language').html(dropdownHTML);
