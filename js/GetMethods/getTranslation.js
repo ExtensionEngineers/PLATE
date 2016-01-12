@@ -4,7 +4,6 @@ function translateText(response) {
     $("#translation").text(translatedText);
 }
 
-//GET method
 $("#language").change(function() {
     var $language = $("#language");
     var $sourceText = $("#sourceText");
@@ -12,5 +11,6 @@ $("#language").change(function() {
         '&target=' + $language.val() +
         '&q=' + $sourceText.text();
 
+    //GET method
     $.get(url, translateText);
 });
