@@ -1,6 +1,4 @@
-# ng-todo
-Minimal angular todo extension for Chrome
-
-This is live example of tutorial:
-
-Grab it from chrome webstore: https://chrome.google.com/webstore/detail/aommafigioodamhobgffifgoonmpnmmc
+# PLATE
+Do you have too much on your plate to learn a new language?
+This chrome extension encourages passively learning with respect to learning a new language by
+changing one word from every web page you visit into the language you are looking to learn.
