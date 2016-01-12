@@ -2,13 +2,20 @@
 function injectLanguages(response){
     var dropdownHTML = "";
     //<option value="fr">French</option>
-    for(var i = 0; i < response.data.languages.length; i++){
+    /*for(var i = 0; i < response.data.languages.length; i++){
         dropdownHTML += '<option value="';
         dropdownHTML += response.data.languages[i].language;
         dropdownHTML += '">';
         dropdownHTML += response.data.languages[i].name;
         dropdownHTML += '</option>';
     };
+    $('#language').html(dropdownHTML);*/
+
+    $.each(response.data.languages, function(i, item){
+        dropdownHTML += '<option value="' + item.language + '">';
+        dropdownHTML += item.name;
+        dropdownHTML += '</option>';
+    });
     $('#language').html(dropdownHTML);
 }
 
