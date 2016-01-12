@@ -21,61 +21,15 @@
     <div id="translation"></div>
 </div>
 
-<script>
-    function translateText(response) {
-        //var parsed = JSON.parse(response.translateText);
-        var translatedText = response.data.translations[0].translatedText;
-        $("#translation").text(translatedText);
-        //document.getElementById("translation").innerHTML = response.data.translations[0].translatedText;
-    }
-</script>
+<!-- GET methods -->
+<script type="text/javascript" src="js/GetMethods/getTranslation.js"></script>
+<script type="text/javascript" src="js/GetMethods/getLanguages.js"></script>
 
-<script>
-
-    $("#language").change(function() {
-        var $language = $("#language");
-        var $sourceText = $("#sourceText");
-
-        var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&source=en&target='
-                + $language.val()
-                + '&callback=translateText&q='
-                + $sourceText.text();
-        //newScript.src = source;
-
-        //$.getScript(source, function(response){
-        //    document.getElementById("translation").innerHTML = response.data.translations[0].translatedText;
-        //});
-
-        $.get(source, translateText);
-
-        // When we add this script to the head, the request is sent off.
-        //$('head').append(newScript);
-    });
-
-</script>
-
-<script>
-    function injectLanguages(response){
-        var dropdownHTML = "";
-        //<option value="fr">French</option>
-        for(var i = 0; i < response.data.languages.length; i++){
-            dropdownHTML += '<option value="';
-            dropdownHTML += response.data.languages[i].language;
-            dropdownHTML += '">';
-            dropdownHTML += response.data.languages[i].name;
-            dropdownHTML += '</option>';
-        };
-        $('#language').html(dropdownHTML);
-    }
-</script>
-
-<script>
-    var source = "https://www.googleapis.com/language/translate/v2/languages?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&target=en";
-    $.getJSON(source, injectLanguages);
-</script>
-
+<!-- Libraries -->
 <script type="text/javascript" src="lib/angular/angular.js"></script>
 <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Angular Scripts -->
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controllers/MainController.js"></script>
 </body>
