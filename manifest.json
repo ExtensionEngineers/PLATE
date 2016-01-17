@@ -13,8 +13,7 @@
     "js": [
       "lib/jquery/jquery-2.1.3.min.js",
       "js/GetMethods/getLanguages.js",
-      "js/GetMethods/getTranslation.js",
-      "js/parse.js"
+      "js/GetMethods/getTranslation.js"
     ],
     "matches": [ "http://*/*", "https://*/*", "file:///*" ]
   } ],
