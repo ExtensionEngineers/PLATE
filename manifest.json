@@ -8,15 +8,19 @@
     "default_popup": "index.html",
     "default_icon" : "images/logo.png"
   },
-  "background":
-  {
-    "scripts": [
+  "content_scripts": [ {
+    "run_at": "document_end",
+    "js": [
       "lib/jquery/jquery-2.1.3.min.js",
       "js/GetMethods/getTranslation.js",
-      "js/GetMethods/getLanguages.js"
-    ]
-  },
+      "js/GetMethods/getLanguages.js",
+      "js/parse.js"
+    ],
+    "matches": [ "http://*/*", "https://*/*", "file:///*" ]
+  } ],
   "permissions": [
+    "\u003Call_urls>",
+    "webRequest",
     "tabs",
     "activeTab",
     "debugger",
