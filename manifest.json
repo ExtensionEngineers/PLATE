@@ -12,6 +12,7 @@
     "run_at": "document_end",
     "js": [
       "lib/jquery/jquery-2.1.3.min.js",
+      "js/translationOnOff.js",
       "js/GetMethods/getTranslation.js",
       "js/GetMethods/getLanguages.js",
       "js/parse.js"
