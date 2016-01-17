@@ -1,4 +1,2 @@
-
-//var $paragraph = $(p);
-
-//$paragraph.append("Hey guys, this is PLATE");
+var $paragraph = $("p");
+$paragraph.html("HODOR");
