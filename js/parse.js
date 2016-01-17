@@ -1,16 +1,12 @@
 
 //selects the first paragraph tag
-var n = 5;
 var $p = $("p:eq(0)");
 var pString = $p.text();
 pString = pString.split(" ");
+length = pString.length;
+
+var n = Math.floor((Math.random() * length) + 1);
 
 var word = pString[n];
 
-var translatedPhrase = translate(word);
-
-pString[n] = translatedPhrase;
-
-pString = pString.join(" ");
-
-$p.html(pString);
+translate(word, n);
