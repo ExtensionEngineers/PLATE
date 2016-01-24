@@ -1,20 +1,19 @@
-
-
-chrome.storage.onChanged.addListener(function() {
-    var language;
+function translate(){
     var paragraphIndex;
+    var apiKey = "AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM";
+    var apiSource = "en";
     var $p = $("p:eq(0)");
     var pString = $p.text();
     chrome.storage.sync.get(null, function(data) {
-        language = data.language;
+        var language = data.language;
 
         pString = pString.split(" ");
         paragraphIndex = Math.floor((Math.random() * pString.length) + 1);
         var word = pString[paragraphIndex];
 
-        var $language = $("#language");
-        var $sourceText = $("#sourceText");
-        var url = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&source=en' +
+        var url = 'https://www.googleapis.com/language/translate/v2' +
+            '?key=' + apiKey +
+            '&source=' + apiSource +
             '&target=' + language +
             '&q=' + word;
 
@@ -29,4 +28,9 @@ chrome.storage.onChanged.addListener(function() {
             $p.html(pString);
         });
     });
-});
+}
+
+translate();
+
+chrome.storage.onChanged.addListener(translate);
+

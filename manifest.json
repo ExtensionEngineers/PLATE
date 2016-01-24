@@ -1,12 +1,16 @@
 {
   "manifest_version": 2,
-  "name"            : "P.L.A.T.E.",
-  "description"     : "Passive Learning Angular Translation Extension",
+  "name"            : "PLATE.",
+  "description"     : "Passive learning",
   "short_name"      : "PLATE",
   "version"         : "0.1",
   "browser_action": {
     "default_popup": "index.html",
     "default_icon" : "images/logo.png"
+  },
+  "storage": {
+    "language": "es",
+    "name": "Spanish"
   },
   "content_scripts": [ {
     "run_at": "document_end",
@@ -14,7 +18,7 @@
       "lib/jquery/jquery-2.1.3.min.js",
       "js/GetMethods/getTranslation.js"
     ],
-    "matches": [ "http://*/*", "https://*/*", "file:///*" ]
+    "matches": [ "<all_urls>" ]
   } ],
   "permissions": [
     "<all_urls>",
