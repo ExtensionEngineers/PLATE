@@ -10,7 +10,8 @@
   },
   "storage": {
     "language": "es",
-    "name": "Spanish"
+    "name": "Spanish",
+    "enabled": true
   },
   "content_scripts": [ {
     "run_at": "document_end",
