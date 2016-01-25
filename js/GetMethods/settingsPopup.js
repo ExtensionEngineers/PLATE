@@ -24,7 +24,7 @@ $language.change(function() {
     //chrome.storage.sync.set({language: $language.val()});
 });
 
-$enableButton.click(function(){
+$enableButton.click(function() {
     chrome.storage.sync.get(null, function(data){
         if ($enableButton.text() == "On"){
             $enableButton.text("Off");
@@ -44,7 +44,7 @@ $enableButton.click(function(){
 });
 
 //Callback function
-function injectLanguages(response){
+function injectLanguages(response) {
     var dropdownHTML = "";
     //<option value="fr">
     //  French

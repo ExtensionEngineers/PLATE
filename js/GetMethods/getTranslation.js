@@ -13,7 +13,6 @@ function translate(){
     });
 }
 
-
 function getTranslatedWord(){
     chrome.storage.sync.get(null, function(data) {
         if (data.language == null){
@@ -22,8 +21,6 @@ function getTranslatedWord(){
                 name: "Spanish",
                 enabled: true
             });
-            //chrome.storage.sync.set({name: "Spanish"});
-            //chrome.storage.sync.set({enabled: true});
             findReplace();
         }
         else{
@@ -49,8 +46,6 @@ function findReplace(){
             '&source=' + apiSource +
             '&target=' + language +
             '&q=' + word;
-
-        //GET method
         $.get(url,function(response) {
             var translatedWord = response.data.translations[0].translatedText;
             var pString = $p.text();
