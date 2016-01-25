@@ -11,34 +11,35 @@ chrome.storage.sync.get(null, function(data){
     else if (data.enabled == false) {
         $enableButton.text("Off");
     }
-    //else{  //this runs when the storage is uninitalized on install
-    //    chrome.storage.sync.set({enabled: true});
-    //}
 });
 
 $language.change(function() {
-    chrome.storage.sync.set({
-        name: $language.find(":selected").text(),
-        language: $language.val()
-    });
-    //chrome.storage.sync.set({language: $language.val()});
+    chrome.storage.sync.set(
+        {
+            name: $language.find(":selected").text(),
+            language: $language.val()
+        },
+        function()
+        {
+            reload();
+        }
+    );
 });
 
 $enableButton.click(function() {
     chrome.storage.sync.get(null, function(data){
         if ($enableButton.text() == "On"){
             $enableButton.text("Off");
-            chrome.storage.sync.set({enabled: false});
-            chrome.storage.sync.get(null, function(response){
-                console.log(response.enabled);
-            });
+            chrome.storage.sync.set(
+                {enabled: false},
+                function(){
+                    reload();
+                }
+            );
         }
-        else{
+        else if($enableButton.text() == "Off") {
             $enableButton.text("On");
             chrome.storage.sync.set({enabled: true});
-            chrome.storage.sync.get(null, function(response){
-                console.log(response.enabled);
-            });
         }
     });
 });
@@ -58,5 +59,13 @@ function injectLanguages(response) {
 
     chrome.storage.sync.get(null, function(data){
         $language.val(data.language);
+    });
+}
+
+
+function reload(){
+    chrome.runtime.sendMessage({
+        from:    'content',
+        subject: 'reload'
     });
 }

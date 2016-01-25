@@ -5,17 +5,6 @@ translate();
 function translate(){
     chrome.storage.sync.get(null, function(data){
         if(data.language == null){
-            getTranslatedWord();
-        }
-        if (data.enabled == true){
-            getTranslatedWord();
-        }
-    });
-}
-
-function getTranslatedWord(){
-    chrome.storage.sync.get(null, function(data) {
-        if (data.language == null){
             chrome.storage.sync.set({
                 language: "es",
                 name: "Spanish",
@@ -23,7 +12,7 @@ function getTranslatedWord(){
             });
             findReplace();
         }
-        else{
+        else if (data.enabled == true){
             findReplace();
         }
     });
@@ -57,3 +46,4 @@ function findReplace(){
         });
     });
 }
+

@@ -13,6 +13,10 @@
     "name": "Spanish",
     "enabled": true
   },
+  "background": {
+    "persistent": false,
+    "scripts": ["js/background.js"]
+  },
   "content_scripts": [ {
     "run_at": "document_end",
     "js": [
