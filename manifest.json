@@ -11,7 +11,8 @@
   "storage": {
     "language": "es",
     "name": "Spanish",
-    "enabled": true
+    "enabled": true,
+    "numberOfParagraphs": 1
   },
   "background": {
     "persistent": false,

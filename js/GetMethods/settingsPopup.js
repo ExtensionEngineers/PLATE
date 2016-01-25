@@ -1,5 +1,6 @@
 var $language = $("#language");
 var $enableButton = $("#enableButton");
+var $numParagraphs = $("#numParagraphs");
 var url = "https://www.googleapis.com/language/translate/v2/languages?key=AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM&target=en";
 $.get(url, injectLanguages);
 
@@ -18,6 +19,18 @@ $language.change(function() {
         {
             name: $language.find(":selected").text(),
             language: $language.val()
+        },
+        function()
+        {
+            reload();
+        }
+    );
+});
+
+$numParagraphs.change(function() {
+    chrome.storage.sync.set(
+        {
+            numberOfParagraphs: $numParagraphs.val()
         },
         function()
         {
