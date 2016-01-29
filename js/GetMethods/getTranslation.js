@@ -21,7 +21,6 @@ function translate(){
 function findReplace(){
     chrome.storage.sync.get(null, function(data){
         var language = data.language;
-        var paragraphIndex;
         var apiKey = "AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM";
         var apiSource = "en";
 
@@ -29,7 +28,7 @@ function findReplace(){
             var $item = $(item);
             var pString = $item.text();
             pString = pString.split(" ");
-            paragraphIndex = Math.floor((Math.random() * pString.length) + 1);
+            var paragraphIndex = Math.floor((Math.random() * pString.length) + 1);
             var word = pString[paragraphIndex];
 
             var url = 'https://www.googleapis.com/language/translate/v2' +
@@ -38,12 +37,13 @@ function findReplace(){
                 '&target=' + language +
                 '&q=' + word;
 
-            $.get(url,function(response) {
+            $.get(url, function (response) {
                 var translatedWord = response.data.translations[0].translatedText;
-                pString[paragraphIndex] = "<strong>" + translatedWord + "</strong>";
+                pString[paragraphIndex] = "<strong class='translation' id='translation" + i + "'>" + translatedWord + "</strong>";
                 pString = pString.join(" ");
-
                 $item.html(pString);
+                var $translation = $("#translation" + i);
+                $translation.qtip({content: {text: word}});
             });
         });
     });
