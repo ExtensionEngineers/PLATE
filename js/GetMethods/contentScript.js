@@ -39,7 +39,7 @@ function findReplace(){
 
             $.get(url, function (response) {
                 var translatedWord = response.data.translations[0].translatedText;
-                pString[paragraphIndex] = "<strong class='translation' id='translation" + i + "'>" + translatedWord + "</strong>";
+                pString[paragraphIndex] = "<element class='translation' id='translation" + i + "'>" + translatedWord + "</element>";
                 pString = pString.join(" ");
                 $item.html(pString);
                 var $translation = $("#translation" + i);

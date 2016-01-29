@@ -20,12 +20,13 @@
   "content_scripts": [ {
     "run_at": "document_end",
     "css": [
-      "lib/qTip/qTip-2.2.1.css"
+      "lib/qTip/qTip-2.2.1.css",
+      "css/popup.css"
     ],
     "js": [
       "lib/jquery/jquery-2.1.3.min.js",
       "lib/qTip/qTip-2.2.1.js",
-      "js/GetMethods/getTranslation.js"
+      "js/GetMethods/contentScript.js"
     ],
     "matches": [ "<all_urls>" ]
   } ],
