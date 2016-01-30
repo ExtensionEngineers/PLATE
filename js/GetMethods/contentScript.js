@@ -4,6 +4,7 @@ translate();
 
 function translate(){
     chrome.storage.sync.get(null, function(data){
+        //only happens upon  install
         if(data.language == null){
             chrome.storage.sync.set({
                 language: "es",
@@ -24,9 +25,9 @@ function findReplace(){
         var apiKey = "AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM";
         var apiSource = "en";
 
-        $.each($("p"), function(i, item) {
-            var $item = $(item);
-            var pString = $item.text();
+        $.each($("p"), function(index, paragraph) {
+            var $paragraph = $(paragraph);
+            var pString = $paragraph.text();
             pString = pString.split(" ");
 
             if (pString[0] != "") {
@@ -41,10 +42,10 @@ function findReplace(){
 
                 $.get(url, function (response) {
                     var translatedWord = response.data.translations[0].translatedText;
-                    pString[paragraphIndex] = "<element class='translation' id='translation" + i + "'>" + translatedWord + "</element>";
+                    pString[paragraphIndex] = "<element class='translation' id='translation" + index + "'>" + translatedWord + "</element>";
                     pString = pString.join(" ");
-                    $item.html(pString);
-                    var $translation = $("#translation" + i);
+                    $paragraph.html(pString);
+                    var $translation = $("#translation" + index);
                     $translation.qtip({content: {text: word}});
                 });
             }
