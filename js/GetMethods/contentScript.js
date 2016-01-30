@@ -46,7 +46,29 @@ function findReplace(){
                     pString = pString.join(" ");
                     $paragraph.html(pString);
                     var $translation = $("#translation" + index);
-                    $translation.qtip({content: {text: word}});
+                    $translation.qtip(
+                        {
+                            content: {
+                                text: word,
+                                title: "Translation"
+                            },
+                            classes: 'count-down-bubble',
+                            position: {
+                                my: 'bottom center',
+                                at: 'top center',
+                            },
+                            show: {
+                                effect: function() {
+                                    $(this).slideDown();
+                                }
+                            },
+                            hide: {
+                                effect: function() {
+                                    $(this).slideUp();
+                                },
+                            }
+                        }
+                    );
                 });
             }
         });
