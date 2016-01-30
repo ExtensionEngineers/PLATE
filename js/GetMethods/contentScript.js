@@ -24,27 +24,30 @@ function findReplace(){
         var apiKey = "AIzaSyCL9jeVEeDwzPxHXkDv39woblcUc538pDM";
         var apiSource = "en";
 
-        $.each($("p"), function(i, item){
+        $.each($("p"), function(i, item) {
             var $item = $(item);
             var pString = $item.text();
             pString = pString.split(" ");
-            var paragraphIndex = Math.floor((Math.random() * pString.length) + 1);
-            var word = pString[paragraphIndex];
 
-            var url = 'https://www.googleapis.com/language/translate/v2' +
-                '?key=' + apiKey +
-                '&source=' + apiSource +
-                '&target=' + language +
-                '&q=' + word;
+            if (pString[0] != "") {
+                var paragraphIndex = Math.floor((Math.random() * pString.length));
+                var word = pString[paragraphIndex];
 
-            $.get(url, function (response) {
-                var translatedWord = response.data.translations[0].translatedText;
-                pString[paragraphIndex] = "<element class='translation' id='translation" + i + "'>" + translatedWord + "</element>";
-                pString = pString.join(" ");
-                $item.html(pString);
-                var $translation = $("#translation" + i);
-                $translation.qtip({content: {text: word}});
-            });
+                var url = 'https://www.googleapis.com/language/translate/v2' +
+                    '?key=' + apiKey +
+                    '&source=' + apiSource +
+                    '&target=' + language +
+                    '&q=' + word;
+
+                $.get(url, function (response) {
+                    var translatedWord = response.data.translations[0].translatedText;
+                    pString[paragraphIndex] = "<element class='translation' id='translation" + i + "'>" + translatedWord + "</element>";
+                    pString = pString.join(" ");
+                    $item.html(pString);
+                    var $translation = $("#translation" + i);
+                    $translation.qtip({content: {text: word}});
+                });
+            }
         });
     });
 }

@@ -14,13 +14,11 @@ chrome.storage.sync.get(null, function(data){
 });
 
 $language.change(function() {
-    chrome.storage.sync.set(
-        {
+    chrome.storage.sync.set({
             name: $language.find(":selected").text(),
             language: $language.val()
         },
-        function()
-        {
+        function() {
             reload();
         }
     );
