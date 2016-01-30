@@ -42,9 +42,10 @@ function findReplace(){
 
                 $.get(url, function (response) {
                     var translatedWord = response.data.translations[0].translatedText;
-                    pString[paragraphIndex] = "<element class='translation' id='translation" + index + "'>" + translatedWord + "</element>";
-                    pString = pString.join(" ");
-                    $paragraph.html(pString);
+                    var htmlString = $paragraph.html();
+                    
+                    htmlString = htmlString.replace(" " + word + " ", " <element class='translation' id='translation" + index + "'>" + translatedWord + "</element> ");
+                    $paragraph.html(htmlString);
                     var $translation = $("#translation" + index);
                     $translation.qtip(
                         {
